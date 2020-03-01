@@ -12,6 +12,25 @@ This is a tools lib for getting ActivityResult more convenience
 
 # Config
 
+### Add it in your root build.gradle at the end of repositories
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+}
+```
+
+### Add the dependency
+
+```
+implementation 'com.github.xiaojinzi123:ActivityResultHelper:<version>'
+```
+
+`<version>` replace with real version
+
 # Useage
 
 ## Get ActivityResult
