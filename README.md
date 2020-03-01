@@ -40,7 +40,7 @@ implementation 'com.github.xiaojinzi123:ActivityResultHelper:<version>'
 ## Get ActivityResult
 
 ```
-ActivityResultHelper.with(this)
+ActivityResultHelper.with(fragmentActivity)
                 .target(SecondAct.class)
                 //.target(new Intent(this, SecondAct.class))
                 .requestCodeRandom()
@@ -55,7 +55,7 @@ ActivityResultHelper.with(this)
 ## Get Intent(without resultCode match)
 
 ```
-ActivityResultHelper.with(this)
+ActivityResultHelper.with(fragment)
                 .target(ThirdAct.class)
                 .requestCodeRandom()
                 .startForIntent(new Callback<Intent>() {
@@ -69,7 +69,7 @@ ActivityResultHelper.with(this)
 ## Get Intent(resultCode match)
 
 ```
-ActivityResultHelper.with(this)
+ActivityResultHelper.with(context)
                 .target(ThirdAct.class)
                 .requestCodeRandom()
                 .startForIntent(RESULT_OK, new Callback<Intent>() {
