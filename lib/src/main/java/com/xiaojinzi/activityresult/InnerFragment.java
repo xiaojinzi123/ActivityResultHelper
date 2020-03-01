@@ -56,12 +56,18 @@ public class InnerFragment extends Fragment {
         map.put(requestCode, callback);
     }
 
+    /**
+     * 获取一个可用的 requestCode
+     *
+     * @return 返回一个可用的 requestCode
+     */
     @NonNull
     public Integer getRandomRequestCode() {
         Integer result = null;
         for (int i = 1; i < 256; i++) {
             if (!map.containsKey(i)) {
                 result = i;
+                break;
             }
         }
         return result;
