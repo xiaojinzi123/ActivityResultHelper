@@ -25,4 +25,5 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation androidxLibs.constraintlayout
     implementation project(':lib')
+    // implementation 'com.github.xiaojinzi123:ActivityResultHelper:8324e074b0'
 }
