@@ -10,6 +10,10 @@ This is a tools lib for getting ActivityResult more convenience
 ![](https://img.shields.io/github/languages/code-size/xiaojinzi123/ActivityResultHelper.svg)
 ![](https://img.shields.io/github/license/xiaojinzi123/ActivityResultHelper.svg)
 
+- 支持 `Fragment`
+- 支持 `FragmentActivity`
+- 支持和 `FragmentActivity` 有关联的 `Context`, 比如 `Dialog`
+
 # Config
 
 ### Add it in your root build.gradle at the end of repositories
@@ -43,7 +47,7 @@ ActivityResultHelper.with(this)
                 .startForResult(new Callback<ActivityResult>() {
                     @Override
                     public void accept(@NonNull ActivityResult activityResult) {
-                        Toast.makeText(MainActivity.this, "start1", Toast.LENGTH_SHORT).show();
+                        // todo
                     }
                 });
 ```
@@ -57,7 +61,7 @@ ActivityResultHelper.with(this)
                 .startForIntent(new Callback<Intent>() {
                     @Override
                     public void accept(@NonNull Intent intent) {
-                        
+                        // todo
                     }
                 });
 ```
@@ -71,7 +75,7 @@ ActivityResultHelper.with(this)
                 .startForIntent(RESULT_OK, new Callback<Intent>() {
                     @Override
                     public void accept(@NonNull Intent intent) {
-                        
+                        // todo
                     }
                 });
 ```
