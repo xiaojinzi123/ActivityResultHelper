@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+
+group = 'com.github.xiaojinzi123'
+
+archivesBaseName = "activity-result"
+
+android {
+
+    compileSdkVersion baseVersions.android_compile_sdk
+    defaultConfig {
+        minSdkVersion baseVersions.android_min_sdk
+        targetSdkVersion baseVersions.android_target_sdk
+        versionCode 1
+        versionName "1.0"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation androidxLibs.appcompat
+}

@@ -1,0 +1,3 @@
+rootProject.name='ActivityResultHelper'
+include ':app'
+include ':lib'
