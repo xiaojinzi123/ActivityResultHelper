@@ -2,6 +2,8 @@ package com.xiaojinzi.activityresult;
 
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -49,10 +51,21 @@ public class ActivityResultHelper {
         this.mFragment = mFragment;
     }
 
+    /**
+     * @param context 此 {@link Context} 必须是要和 {@link FragmentActivity} 有关系的
+     *                比如一个 {@link Dialog} 中使用 {@link Dialog#getContext()}
+     *                如果此 {@link Dialog} 是 {@link FragmentActivity} 弹出的,
+     *                那么 此 {@link Context} 一定和 {@link FragmentActivity} 是有关系的.
+     */
     @NonNull
-    public static ActivityResultHelper with(@NonNull FragmentActivity act) {
-        Utils.nonNull(act);
-        return new ActivityResultHelper(act);
+    public static ActivityResultHelper with(@NonNull Context context) {
+        Utils.nonNull(context);
+        Activity targetAct = Utils.getActivityFromContext(context);
+        if (targetAct instanceof FragmentActivity) {
+            return new ActivityResultHelper((FragmentActivity) targetAct);
+        } else {
+            throw new IllegalArgumentException("this context is nothing to do with FragmentActivity!");
+        }
     }
 
     @NonNull
@@ -126,7 +139,7 @@ public class ActivityResultHelper {
     }
 
     @MainThread
-    private void doStartForResult(@NonNull final Callback<ActivityResult> callback){
+    private void doStartForResult(@NonNull final Callback<ActivityResult> callback) {
         // 检查参数
         Utils.nonNull(mRequestCode);
         Utils.nonNull(callback);
