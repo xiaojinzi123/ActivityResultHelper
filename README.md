@@ -10,9 +10,9 @@ This is a tools lib for getting ActivityResult more convenience
 ![](https://img.shields.io/github/languages/code-size/xiaojinzi123/ActivityResultHelper.svg)
 ![](https://img.shields.io/github/license/xiaojinzi123/ActivityResultHelper.svg)
 
-- 支持 `Fragment`
-- 支持 `FragmentActivity`
-- 支持和 `FragmentActivity` 有关联的 `Context`, 比如 `Dialog`
+- support `Fragment`
+- support `FragmentActivity`
+- support all `Context` that is related to `FragmentActivity`, such as `Dialog#getContext()`
 
 # Config
 
