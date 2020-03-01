@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
                 // .target(ThirdAct.class)
                 .target(new Intent(this, ThirdAct.class))
                 .requestCodeRandom()
+                .startForIntent(RESULT_OK, new Callback<Intent>() {
+                    @Override
+                    public void accept(@NonNull Intent intent) {
+
+                    }
+                });
+        ActivityResultHelper.with(this)
+                // .target(ThirdAct.class)
+                .target(new Intent(this, ThirdAct.class))
+                .requestCodeRandom()
                 .startForResult(new Callback<ActivityResult>() {
                     @Override
                     public void accept(@NonNull ActivityResult activityResult) {

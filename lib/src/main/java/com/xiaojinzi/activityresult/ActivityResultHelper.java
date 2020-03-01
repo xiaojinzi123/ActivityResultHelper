@@ -126,7 +126,7 @@ public class ActivityResultHelper {
     }
 
     @MainThread
-    public void doStartForResult(@NonNull final Callback<ActivityResult> callback){
+    private void doStartForResult(@NonNull final Callback<ActivityResult> callback){
         // 检查参数
         Utils.nonNull(mRequestCode);
         Utils.nonNull(callback);
