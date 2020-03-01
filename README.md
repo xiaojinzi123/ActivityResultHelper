@@ -16,10 +16,10 @@ This is a tools lib for getting ActivityResult more convenience
 
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
 
@@ -29,9 +29,9 @@ allprojects {
 implementation 'com.github.xiaojinzi123:ActivityResultHelper:<version>'
 ```
 
-`<version>` replace with real version
+`<version>` replace with the real version!
 
-# Useage
+# Usage
 
 ## Get ActivityResult
 
