@@ -25,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
                 .target(SecondAct.class)
                 // .target(new Intent(this, SecondAct.class))
                 .requestCodeRandom()
-                .startForResult(new Callback<ActivityResult>() {
+                .startForIntent(RESULT_OK, new Callback<Intent>() {
                     @Override
-                    public void accept(@NonNull ActivityResult activityResult) {
+                    public void accept(@NonNull Intent intent) {
                         Toast.makeText(MainActivity.this, "start1", Toast.LENGTH_SHORT).show();
                     }
                 });
