@@ -22,8 +22,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation androidxLibs.appcompat
     implementation androidxLibs.constraintlayout
     implementation project(':lib')
-    // implementation 'com.github.xiaojinzi123:ActivityResultHelper:8324e074b0'
+    // implementation 'com.github.xiaojinzi123:ActivityResultHelper:develop-99324c8f75-1'
 }
