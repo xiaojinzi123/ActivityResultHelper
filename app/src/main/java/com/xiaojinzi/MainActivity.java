@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.xiaojinzi.activityresult.ActivityResultHelper;
 import com.xiaojinzi.activityresult.Callback;
+import com.xiaojinzi.activityresult.RxActivityResultHelper;
 import com.xiaojinzi.activityresult.bean.ActivityResult;
 
 public class MainActivity extends AppCompatActivity {

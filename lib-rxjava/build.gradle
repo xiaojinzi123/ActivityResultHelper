@@ -29,5 +29,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly libs.rxjava
     implementation androidxLibs.appcompat
-    implementation project(path: ':lib')
+    api project(path: ':lib')
 }
