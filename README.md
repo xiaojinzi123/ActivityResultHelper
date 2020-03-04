@@ -29,8 +29,16 @@ allprojects {
 
 ### Add the dependency
 
+####  normal
+
 ```
-implementation 'com.github.xiaojinzi123:ActivityResultHelper:<version>'
+implementation 'com.github.xiaojinzi123.ActivityResultHelper:activity-result:<version>'
+```
+
+####  rxjava extend
+
+```
+implementation 'com.github.xiaojinzi123.ActivityResultHelper:activity-result-rxjava:<version>'
 ```
 
 `<version>` replace with the real version!
@@ -79,3 +87,39 @@ ActivityResultHelper.with(context)
                     }
                 });
 ```
+
+## Use with RxJava
+
+
+### ActivityResult Get
+
+```
+RxActivityResultHelper.with(this)
+                // .target(ThirdAct.class)
+                .target(new Intent(this, ThirdAct.class))
+                .requestCodeRandom()
+                .call()
+                .subscribe(new Consumer<ActivityResult>() {
+                    @Override
+                    public void accept(ActivityResult activityResult) throws Exception {
+                        // todo
+                    }
+                });
+```
+
+### Intent Get
+
+```
+RxActivityResultHelper.with(this)
+                // .target(ThirdAct.class)
+                .target(new Intent(this, ThirdAct.class))
+                .requestCodeRandom()
+                .intentCall(RESULT_OK)
+                .subscribe(new Consumer<Intent>() {
+                    @Override
+                    public void accept(Intent intent) throws Exception {
+                        // doto
+                    }
+                });
+```
+

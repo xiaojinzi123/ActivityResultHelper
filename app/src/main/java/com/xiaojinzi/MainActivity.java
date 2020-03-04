@@ -13,6 +13,8 @@ import com.xiaojinzi.activityresult.Callback;
 import com.xiaojinzi.activityresult.RxActivityResultHelper;
 import com.xiaojinzi.activityresult.bean.ActivityResult;
 
+import io.reactivex.functions.Consumer;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -43,6 +45,34 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void accept(@NonNull ActivityResult activityResult) {
                         Toast.makeText(MainActivity.this, "start2", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    public void start3(View view) {
+        RxActivityResultHelper.with(this)
+                // .target(ThirdAct.class)
+                .target(new Intent(this, ThirdAct.class))
+                .requestCodeRandom()
+                .call()
+                .subscribe(new Consumer<ActivityResult>() {
+                    @Override
+                    public void accept(ActivityResult activityResult) throws Exception {
+                        Toast.makeText(MainActivity.this, "start3", Toast.LENGTH_SHORT).show();
+                    }
+                });
+    }
+
+    public void start_last(View view) {
+        RxActivityResultHelper.with(this)
+                // .target(ThirdAct.class)
+                .target(new Intent(this, ThirdAct.class))
+                .requestCodeRandom()
+                .intentCall(RESULT_OK)
+                .subscribe(new Consumer<Intent>() {
+                    @Override
+                    public void accept(Intent intent) throws Exception {
+                        Toast.makeText(MainActivity.this, "start_last", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
