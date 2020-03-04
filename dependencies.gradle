@@ -5,6 +5,7 @@ ext.baseVersions = [
         android_target_sdk : 29,
         version_code       : 1000,
         version_name       : "1.0",
+        rxjava             : '2.2.18'
 ]
 
 ext.androidxLibs = [
@@ -13,4 +14,5 @@ ext.androidxLibs = [
 ]
 
 ext.libs = [
+        rxjava: "io.reactivex.rxjava2:rxjava:$baseVersions.rxjava"
 ]

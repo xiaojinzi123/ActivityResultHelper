@@ -1,3 +1,4 @@
 rootProject.name='ActivityResultHelper'
 include ':app'
 include ':lib'
+include ':lib-rxjava'

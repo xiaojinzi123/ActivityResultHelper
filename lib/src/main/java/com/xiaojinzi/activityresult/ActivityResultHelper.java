@@ -23,6 +23,9 @@ import com.xiaojinzi.activityresult.support.Action;
  */
 public class ActivityResultHelper {
 
+    /**
+     * 表示 requestCode 是随机的
+     */
     private final Integer RANDOM_REQUESTCODE = Integer.MIN_VALUE;
 
     @Nullable
@@ -43,11 +46,11 @@ public class ActivityResultHelper {
     @Nullable
     private Bundle mOptions;
 
-    private ActivityResultHelper(FragmentActivity mActivity) {
+    protected ActivityResultHelper(FragmentActivity mActivity) {
         this.mActivity = mActivity;
     }
 
-    private ActivityResultHelper(Fragment mFragment) {
+    protected ActivityResultHelper(Fragment mFragment) {
         this.mFragment = mFragment;
     }
 
@@ -66,6 +69,12 @@ public class ActivityResultHelper {
         } else {
             throw new IllegalArgumentException("this context is nothing to do with FragmentActivity!");
         }
+    }
+
+    @NonNull
+    public static ActivityResultHelper with(@NonNull FragmentActivity fragmentActivity) {
+        Utils.nonNull(fragmentActivity);
+        return new ActivityResultHelper(fragmentActivity);
     }
 
     @NonNull
