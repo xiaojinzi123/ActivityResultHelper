@@ -10,6 +10,7 @@ This is a tools lib for getting ActivityResult more convenience
 ![](https://img.shields.io/github/languages/code-size/xiaojinzi123/ActivityResultHelper.svg)
 ![](https://img.shields.io/github/license/xiaojinzi123/ActivityResultHelper.svg)
 
+- support `RxJava`
 - support `Fragment`
 - support `FragmentActivity`
 - support all `Context` that is related to `FragmentActivity`, such as `Dialog#getContext()`
