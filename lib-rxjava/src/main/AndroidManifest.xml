@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xiaojinzi.activityresult" />
+    package="com.xiaojinzi.activityresult.rxjava" />
